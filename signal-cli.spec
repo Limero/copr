@@ -1,33 +1,39 @@
-# https://gitlab.com/elagost/rpm-specfiles/-/blob/master/signal-cli/signal-cli.spec
-Summary: a commandline interface for libsignal-service-java
-Name: signal-cli
-Version: 0.6.12
-Release: 1%{?dist}
-License: GPL
-URL: https://github.com/AsamK/signal-cli
-Source: https://github.com/AsamK/signal-cli/archive/v%{version}.tar.gz
+# based on https://gitlab.com/elagost/rpm-specfiles/-/blob/master/signal-cli/signal-cli.spec
+%define debug_package %{nil}
+
+Name:          signal-cli
+Version:       0.6.12
+Release:       1%{?dist}
+Summary:       Provides a commandline and dbus interface for secure Signal messaging
+License:       GPL
+
+URL:           https://github.com/AsamK/signal-cli
+Source0:       %{url}/archive/v%version.tar.gz
 
 BuildRequires: java-11-openjdk-devel
-Requires: java-11-openjdk
 
-%global debug_package %{nil}
+Requires:      java-11-openjdk
 
 %description
+%{summary}.
 
 %prep
-%setup -q
+%autosetup
 
 %build
-PREFIX=%{buildroot}%{_prefix} ./gradlew build
+./gradlew build
 
 %install
-PREFIX=%{buildroot}%{_prefix} ./gradlew installDist
-install -D build/install/signal-cli/bin/signal-cli %{buildroot}%{_bindir}/signal-cli
+./gradlew installDist
+install -D build/install/signal-cli/bin/signal-cli %{buildroot}%{_bindir}/%{name}
+
+sed -i 's|$APP_HOME/lib|%{_libdir}|g' %{buildroot}%{_bindir}/%{name}
+
 mkdir -p %{buildroot}%{_libdir}
 cp build/install/signal-cli/lib/* %{buildroot}%{_libdir}/
 
 %files
-%{_bindir}/signal-cli
-%{_libdir}/*
-%doc README.md
 %license LICENSE
+%doc README.md
+%{_bindir}/%{name}
+%{_libdir}/*
