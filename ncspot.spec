@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name:          ncspot
-Version:       0.2.5
+Version:       0.2.6
 Release:       1%{?dist}
 Summary:       ncurses Spotify client written in Rust using librespot
 License:       BSD
