@@ -10,6 +10,8 @@ License:       GPL
 URL:           https://github.com/AsamK/signal-cli
 Source0:       %{url}/archive/v%version.tar.gz
 
+BuildArch:     noarch
+
 BuildRequires: java-11-openjdk-devel
 
 Requires:      java-11-openjdk
