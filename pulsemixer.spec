@@ -10,6 +10,8 @@ License:       MIT
 URL:           https://github.com/GeorgeFilipkin/pulsemixer
 Source0:       %{url}/archive/%version.tar.gz
 
+BuildArch:     noarch
+
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 
@@ -30,5 +32,5 @@ Requires:      pulseaudio
 %files
 %license LICENSE
 %doc README.md
-%{_bindir}/%{name}
 %{python3_sitelib}/%{name}*.egg-info/
+%{_bindir}/%{name}
