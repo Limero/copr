@@ -26,7 +26,7 @@ Requires:      qrencode
 ./gradlew build
 
 %install
-./gradlew --no-daemon installDist
+VERSION=%{version} ./gradlew installDist
 install -D build/install/%{name}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 
 sed -i 's|$APP_HOME/lib|%{_libdir}|g' %{buildroot}%{_bindir}/%{name}
