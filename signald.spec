@@ -14,7 +14,8 @@ BuildArch:     noarch
 BuildRequires: java-11-openjdk-devel
 
 Requires:      java-11-openjdk
-Requires:      qrencode
+
+Recommends:    qrencode
 
 %description
 %{summary}.
