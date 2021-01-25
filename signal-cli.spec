@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:          signal-cli
-Version:       0.7.0
+Version:       0.7.4
 Release:       1%{?dist}
 Summary:       Provides a commandline and dbus interface for secure Signal messaging
 License:       GPL
