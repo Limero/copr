@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name: siggo
-Version: 0.8.1
+Version: 0.8.2
 Release: 1%{?dist}
 Summary: A terminal ui for signal-cli, written in Go
 License: GPLv3+
