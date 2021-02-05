@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name:          pmbootstrap
-Version:       1.29.1
+Version:       1.29.2
 Release:       1%{?dist}
 Summary:       Sophisticated chroot/build/flash tool to develop and install postmarketOS
 License:       GPLv3
