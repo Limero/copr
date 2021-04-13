@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name: lf
-Version: r21
+Version: r22
 Release: 1%{?dist}
 Summary: lf is a terminal file manager written in Go
 License: MIT
